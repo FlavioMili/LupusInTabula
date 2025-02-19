@@ -116,7 +116,7 @@ class Game:
 
     async def dayPhase(self):
         self.state = GameState.DISCUSSING
-        await sendMessage("E' arrivato il mattino, discutete chi cacciare")
+        await self.sendMessage("E' arrivato il mattino, discutete chi cacciare")
         for seer_id, target_id in self.seer_vision.items():
             seer = self.players.get(seer_id)
             target = self.players.get(target_id)

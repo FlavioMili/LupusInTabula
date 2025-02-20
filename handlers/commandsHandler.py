@@ -21,7 +21,7 @@ async def newGame(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     join_msg = await update.message.reply_text(
-        f"Nuova partita iniziata, premi il pulsante per partecipare.\nMin: {config.MIN_GIOCATORI} giocatori, Max: {config.MAX_GIOCATORI} giocatori.\nRicorda di iniziare una chat con il bot",
+        f"Nuova partita iniziata, premi il pulsante per partecipare.\nMin: {config.MIN_GIOCATORI} giocatori, Max: {config.MAX_GIOCATORI} giocatori.\nRicorda di iniziare una chat con il bot e di impostare un username",
         reply_markup=reply_markup
     )
     gameHandler.games[chat_id].join_message_id = join_msg.message_id  

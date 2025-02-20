@@ -1,11 +1,11 @@
 # Configurazione temporale (in secondi)
 TEMPO_ATTESA_INIZIO = 20
-TEMPO_NOTTE = 20
+TEMPO_NOTTE = 60
 TEMPO_DISCUSSIONE = 20
 TEMPO_VOTAZIONE = 20
 
 # Configurazione gioco
-MIN_GIOCATORI = 4
+MIN_GIOCATORI = 2
 MAX_GIOCATORI = 10
 
 # Messaggi di stato

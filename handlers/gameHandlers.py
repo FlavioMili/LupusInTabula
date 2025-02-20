@@ -10,7 +10,7 @@ class GameHandler:
         self.games = {}
     
     def newGame(self, chat_id, application):
-        self.games[chat_id] = Game(chat_id, application)
+        self.games[chat_id] = Game(chat_id, application, self)
 
     def getGame(self, chat_id):
         return self.games.get(chat_id, None) 

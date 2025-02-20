@@ -13,9 +13,6 @@ class Player:
     def __str__(self):
         return f"{self.username} ({self.role})"
 
-    def vote(self, target):
-        return f"@{self.username} vota per eliminare @{target.username}"
-
     def die(self):
         self.alive = False
 
@@ -27,7 +24,7 @@ class Player:
 
     async def doVote(self, bot):
         buttons = [
-            [InlineKeyboardButton(f"@{self.game.players[pid].username}", callback_data=f"vote_{pid}")]
+            [InlineKeyboardButton(f"{self.game.players[pid].username}", callback_data=f"vote_{pid}")]
             for pid in self.game.playersAlive if pid != self.user_id
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -47,10 +44,8 @@ class Villico(Player):
         super().__init__(user_id, username, Role.VILLICO, game)
 
     def sendRoleMessage(self, bot):
-        bot.sendMessage(
-            self.user_id,
-            "Sei un Villico, il tuo unico obbiettivo è sopravvivere e votare l'eliminazione dei lupi."
-        )
+        bot.sendMessage( self.user_id, 
+            "Sei un Villico, il tuo unico obbiettivo è sopravvivere e votare l'eliminazione dei lupi.")
 
     async def nightAction(self, bot, context: ContextTypes.DEFAULT_TYPE):
         await bot.sendMessage(self.user_id, "Questa notte vai a dormire tranquillo.")

@@ -22,11 +22,9 @@ class Lupo(Player):
             for target in targets
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        await bot.send_message(
-            self.user_id, 
+        await bot.send_message( self.user_id, 
             "Scegli un giocatore da eliminare:", 
-            reply_markup=reply_markup
-        )
+            reply_markup=reply_markup)
 
     async def handleNightAction(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         query = update.callback_query

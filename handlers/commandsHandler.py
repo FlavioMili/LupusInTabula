@@ -21,13 +21,14 @@ async def newGame(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     join_msg = await update.message.reply_text(
-        f"Nuova partita iniziata, premi il pulsante per partecipare.\nMin: {config.MIN_GIOCATORI} giocatori, Max: {config.MAX_GIOCATORI} giocatori",
+        f"Nuova partita iniziata, premi il pulsante per partecipare.\nMin: {config.MIN_GIOCATORI} giocatori, Max: {config.MAX_GIOCATORI} giocatori.\nRicorda di iniziare una chat con il bot",
         reply_markup=reply_markup
     )
     gameHandler.games[chat_id].join_message_id = join_msg.message_id  
 
-    def start_game_job(job_context):
-        job_context.application.create_task(gameHandler.games[chat_id].startGame())
+def start_game_job(job_context):
+    chat_id = job_context.job.chat_id
+    job_context.application.create_task(gameHandler.games[chat_id].startGame())
 
     gameHandler.games[chat_id].startTimer(start_game_job, 0)
 
@@ -52,7 +53,7 @@ async def joinGame(update: Update, context: ContextTypes.DEFAULT_TYPE, from_butt
         elif await game.addPlayer(user_id, username):
             response_text = f"@{username} si e' unito al gioco\nGiocatori: {len(game.players)}/10"
         else:
-            response_text = f"@{username} non puoi unirti in questo momento. Inizia una chat privata con il bot e riprova."
+            response_text = f"@{username} non puoi unirti in questo momento."
 
     if from_button:
         await context.bot.send_message(chat_id, response_text)

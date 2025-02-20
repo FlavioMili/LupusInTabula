@@ -158,11 +158,12 @@ class Game:
         if self.checkGameOver():
             await self.endGame()
         else:
-            await self.sendMessage("E' arrivato il mattino, discutete chi cacciare")
+            await self.sendMessage(config.MSG_GIORNO)
             self.startTimer(self.votingPhase, config.TEMPO_DISCUSSIONE)
 
     async def votingPhase(self):
         print("Voting Phase started")
+        await self.sendMessage(config.MSG_VOTAZIONE)
         self.state = GameState.VOTING
         self.votes = {}  
 

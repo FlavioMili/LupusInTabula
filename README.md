@@ -42,7 +42,7 @@ Start a Game: Users can start a new game by typing `/newgame`.
 
 Join the Game: Players join by typing `/join`.
 
-Game starts: after TEMPO_ATTESA_INIZIO seconds the last player who wrote `/join` or after someone wrote `/startgame` to force the start
+Game starts: if there are enough players, after TEMPO_ATTESA_INIZIO seconds the last player who wrote `/join` joined or after someone wrote `/startgame` to force the start
 
 Night Phase: All special roles can perform their night actions
 

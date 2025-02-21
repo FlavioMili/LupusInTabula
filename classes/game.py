@@ -255,6 +255,7 @@ class Game:
             await self.application.bot.send_message(self.chat_id, "I lupi hanno vinto!")
         else:
             await self.application.bot.send_message(self.chat_id, "I paesani hanno vinto!")
+
         if self.chat_id in self.game_handler.games:
             del self.game_handler.games[self.chat_id]
 

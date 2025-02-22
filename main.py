@@ -22,8 +22,8 @@ def main():
 
     application.add_handler(CommandHandler("newgame", newGame))
     application.add_handler(CommandHandler("join", joinGame))
-    application.add_handler(CallbackQueryHandler(button, pattern="^join$"))
     application.add_handler(CommandHandler("quit", quitGame))
+    application.add_handler(CallbackQueryHandler(button, pattern="^join$"))
     application.add_handler(CommandHandler("startgame", forceStartGame))
 
     logger.info("Bot avviato con successo")

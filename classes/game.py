@@ -142,6 +142,7 @@ class Game:
             await self.eliminatePlayer(victim_id)
             victim = self.players.get(victim_id)
             await self.sendMessage(f"@{victim.username} e' stato mangiato dai lupi! Era un {victim.role}.")
+            self.wolf_kills = []
         else:
             await self.sendMessage("Questa notte i lupi sono rimasti a digiuno.")
 

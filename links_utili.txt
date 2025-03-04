@@ -1,0 +1,15 @@
+Nome progetto: Sviluppo di bot Telegram o Discord in Python
+
+Studente che ha svolto il progetto: Milinanni_Flavio_210326
+Professore tutor: Agosta Giovanni
+
+Link di documentazione del Progetto:
+
+Specifica originale, nel progetto sono state aggiunte anche altre funzionalità avanzate:
+	- https://docs.google.com/document/d/1HOELOXX7dnxqk7l_ooBUNe2E4qlkrwUDj0p4hejnUGw/edit?usp=sharing
+
+Repository GitHub con tutto il codice pubblico del progetto: 
+	- https://github.com/FlavioMili/LupusInTabula
+
+Libreria utilizzata per lo sviluppo del bot telegram in python: 
+	- https://docs.python-telegram-bot.org/en/v21.10/
